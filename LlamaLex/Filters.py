@@ -67,8 +67,7 @@ filter_functions: typing.Dict[str, typing.Callable] = {
     'acronym_with_periods': function_that_filters_out_token_text_from_start(
         f'([A-Z]{PERIOD})' + r'{2,}s?', EnglishTokenName.WORD),
     'abbreviation_with_period': function_that_filters_out_token_text_from_start(
-        f'(st|dr|mr){PERIOD}', EnglishTokenName.WORD,
-        ignore_case=True),
+        f'(st|dr|mr){PERIOD}', EnglishTokenName.WORD, ignore_case=True),
     'other': function_that_filters_out_token_text_from_start(
         f'([^:;&*,.?!"(){OPENING_SQUARE_BRACKET}{CLOSING_SQUARE_BRACKET}{SINGLE_QUOTE}]+'
         f'{SINGLE_QUOTE}[a-z]{LEFT_NUMBER_CURLY_BRACKET}2,{RIGHT_NUMBER_CURLY_BRACKET}|'

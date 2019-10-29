@@ -49,3 +49,8 @@ print(' ')
 for each in EnglishLexer.lex('User123 joined the server. In addition, User_123 joined the server.'):
     print(each)
 print(' ')
+for each in EnglishLexer.lex('"\'When people take breaks from coding, '
+                             'they\'re perhaps more likely to find solutions to pesky problems.\'" (Page 99) '
+                             '"\'However, it\'s too late\'." (Page 101)'):
+    print(each)
+print(' ')

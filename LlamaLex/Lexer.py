@@ -49,6 +49,12 @@ class EnglishLexer:
             cls.opened_single_quote = False
             cls.token_name = EnglishTokenName.CLOSING_PUNCTUATION
 
+        if (cls.token_name is EnglishTokenName.POSSESSIVE_SUFFIX) and (cls.token_text == "'") and \
+                (cls.tokens[-1][1] is EnglishTokenName.OPENING_PUNCTUATION):
+            cls.token_name = EnglishTokenName.OPENING_PUNCTUATION if (not cls.opened_single_quote) else \
+                EnglishTokenName.CLOSING_PUNCTUATION
+            cls.opened_single_quote = not cls.opened_single_quote
+
         cls.tokens.append((cls.token_text, cls.token_name))
         cls.token_text = ''
         cls.token_name = EnglishTokenName.NONE
