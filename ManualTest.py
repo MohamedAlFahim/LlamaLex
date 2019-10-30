@@ -54,3 +54,6 @@ for each in EnglishLexer.lex('"\'When people take breaks from coding, '
                              '"\'However, it\'s too late\'." (Page 101)'):
     print(each)
 print(' ')
+for each in EnglishLexer.lex("'Some text in single-quotes.'"):
+    print(each)
+print(' ')
