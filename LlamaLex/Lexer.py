@@ -68,8 +68,8 @@ class EnglishLexer:
         while cls.position != len(cls.input_text):
             current_character = cls.input_text[cls.position]
 
-            if cls.token_text.startswith('$'):
-                cls.potentially_opened_math = True
+            # if cls.token_text.startswith('$'):
+            #     cls.potentially_opened_math = True
             if (current_character != ' ') or cls.potentially_opened_math:
                 cls.token_text += current_character
             else:

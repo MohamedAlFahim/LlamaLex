@@ -57,3 +57,10 @@ print(' ')
 for each in EnglishLexer.lex("'Some text in single-quotes.'"):
     print(each)
 print(' ')
+for each in EnglishLexer.lex('"[W]hat is a compiler?", asked Jenny (page 3).'):
+    print(each)
+print(' ')
+for each in EnglishLexer.lex('They decided to spend over $4000 on photon-based computers, to improve performance by '
+                             '2000%. Relatively slow computing used to be their #1 reason for inefficiency.'):
+    print(each)
+print(' ')

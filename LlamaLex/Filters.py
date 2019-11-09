@@ -47,6 +47,8 @@ def function_that_filters_out_token_text_from_start(pattern: str, token_name: En
 
 # filter functions higher up have higher priority, as dictionaries in Python 3.7 are ordered
 filter_functions: typing.Dict[str, typing.Callable] = {
+    'symbol': function_that_filters_out_token_text_from_start(
+        r'[\$#%]', EnglishTokenName.SYMBOL),
     'contraction': function_that_filters_out_token_text_from_start(
         r"(it's|that's|let's|he's|she's|what's|who's)", EnglishTokenName.WORD, ignore_case=True),
     'possessive_suffix': function_that_filters_out_token_text_from_start(
@@ -63,7 +65,7 @@ filter_functions: typing.Dict[str, typing.Callable] = {
         f'{HYPHEN_MINUS}?[1-9]({PERIOD}{DIGIT}*)?(e|x10{CARET})[+{HYPHEN_MINUS}]?{DIGIT}+', EnglishTokenName.NUMBER,
         ignore_case=True),
     'simple_number': function_that_filters_out_token_text_from_start(
-        f'{HYPHEN_MINUS}?{DIGIT}+({PERIOD}{DIGIT}+)?%?', EnglishTokenName.NUMBER),
+        f'{HYPHEN_MINUS}?{DIGIT}+({PERIOD}{DIGIT}+)?', EnglishTokenName.NUMBER),
     'acronym_with_periods': function_that_filters_out_token_text_from_start(
         f'([A-Z]{PERIOD})' + r'{2,}s?', EnglishTokenName.WORD),
     'abbreviation_with_period': function_that_filters_out_token_text_from_start(
