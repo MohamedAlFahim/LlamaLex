@@ -65,7 +65,7 @@ filter_functions: typing.Dict[str, typing.Callable] = {
         f'{HYPHEN_MINUS}?[1-9]({PERIOD}{DIGIT}*)?(e|x10{CARET})[+{HYPHEN_MINUS}]?{DIGIT}+', EnglishTokenName.NUMBER,
         ignore_case=True),
     'simple_number': function_that_filters_out_token_text_from_start(
-        f'{HYPHEN_MINUS}?{DIGIT}+({PERIOD}{DIGIT}+)?', EnglishTokenName.NUMBER),
+        f'{HYPHEN_MINUS}?{DIGIT}+(,{DIGIT}+)*({PERIOD}{DIGIT}+)?', EnglishTokenName.NUMBER),
     'acronym_with_periods': function_that_filters_out_token_text_from_start(
         f'([A-Z]{PERIOD})' + r'{2,}s?', EnglishTokenName.WORD),
     'abbreviation_with_period': function_that_filters_out_token_text_from_start(

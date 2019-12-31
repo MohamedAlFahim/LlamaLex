@@ -64,3 +64,7 @@ for each in EnglishLexer.lex('They decided to spend over $4000 on photon-based c
                              '2000%. Relatively slow computing used to be their #1 reason for inefficiency.'):
     print(each)
 print(' ')
+for each in EnglishLexer.lex('400,000.5 is greater than 400,000, which is greater than 300,000. '
+                             '-200,000,000 is less than -400, and less than 300,000,000.21.'):
+    print(each)
+print(' ')
